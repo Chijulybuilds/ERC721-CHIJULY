@@ -1,0 +1,149 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+
+    <!-- Background Gradient -->
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#1b0033"/>
+      <stop offset="100%" stop-color="#050510"/>
+    </radialGradient>
+
+    <!-- Neon Blue -->
+    <linearGradient id="neonBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d9ff"/>
+      <stop offset="100%" stop-color="#008cff"/>
+    </linearGradient>
+
+    <!-- Neon Pink -->
+    <linearGradient id="neonPink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff4fd8"/>
+      <stop offset="100%" stop-color="#ff0077"/>
+    </linearGradient>
+
+    <!-- Fur Gradient -->
+    <linearGradient id="fur" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5a3922"/>
+      <stop offset="100%" stop-color="#24150f"/>
+    </linearGradient>
+
+    <!-- Glow Effect -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+  </defs>
+
+  <!-- Background -->
+  <rect width="1024" height="1024" fill="url(#bgGlow)"/>
+
+  <!-- Neon Floating Particles -->
+  <circle cx="180" cy="250" r="10" fill="#ff00aa" opacity="0.8"/>
+  <circle cx="850" cy="180" r="14" fill="#00d9ff" opacity="0.7"/>
+  <circle cx="750" cy="850" r="12" fill="#ff44cc" opacity="0.6"/>
+  <circle cx="250" cy="780" r="16" fill="#00d9ff" opacity="0.5"/>
+  <circle cx="920" cy="520" r="10" fill="#ff44cc" opacity="0.7"/>
+
+  <!-- Monkey Head -->
+  <ellipse cx="512" cy="520" rx="230" ry="280" fill="url(#fur)"/>
+
+  <!-- Face -->
+  <ellipse cx="512" cy="590" rx="140" ry="160" fill="#d7b08b"/>
+
+  <!-- Ears -->
+  <circle cx="320" cy="420" r="70" fill="#4b2c1d"/>
+  <circle cx="704" cy="420" r="70" fill="#4b2c1d"/>
+
+  <!-- Headphones -->
+  <path d="M300 390 Q512 180 724 390"
+        stroke="url(#neonPink)"
+        stroke-width="30"
+        fill="none"
+        filter="url(#glow)"/>
+
+  <rect x="250" y="400" width="70" height="160"
+        rx="30"
+        fill="url(#neonPink)"
+        filter="url(#glow)"/>
+
+  <rect x="704" y="400" width="70" height="160"
+        rx="30"
+        fill="url(#neonPink)"
+        filter="url(#glow)"/>
+
+  <!-- VR Goggles -->
+  <rect x="320" y="360"
+        width="400"
+        height="180"
+        rx="70"
+        fill="#111"
+        stroke="url(#neonBlue)"
+        stroke-width="12"
+        filter="url(#glow)"/>
+
+  <!-- Left Lens -->
+  <ellipse cx="430" cy="450"
+           rx="85"
+           ry="65"
+           fill="url(#neonBlue)"
+           opacity="0.9"
+           filter="url(#glow)"/>
+
+  <!-- Right Lens -->
+  <ellipse cx="594" cy="450"
+           rx="85"
+           ry="65"
+           fill="url(#neonBlue)"
+           opacity="0.9"
+           filter="url(#glow)"/>
+
+  <!-- Nose -->
+  <ellipse cx="512" cy="580"
+           rx="28"
+           ry="18"
+           fill="#5c3727"/>
+
+  <!-- Mouth -->
+  <path d="M450 660 Q512 720 574 660"
+        stroke="#5c3727"
+        stroke-width="10"
+        fill="none"
+        stroke-linecap="round"/>
+
+  <!-- Necklace -->
+  <circle cx="470" cy="780" r="22"
+          stroke="#00d9ff"
+          stroke-width="6"
+          fill="none"
+          filter="url(#glow)"/>
+
+  <circle cx="550" cy="780" r="22"
+          stroke="#ff00aa"
+          stroke-width="6"
+          fill="none"
+          filter="url(#glow)"/>
+
+  <!-- Left Hand -->
+<ellipse cx="280" cy="760"
+         rx="70"
+         ry="100"
+         fill="url(#fur)"
+         transform="rotate(-25 280 760)"/>
+
+<!-- Right Hand -->
+<ellipse cx="744" cy="760"
+         rx="70"
+         ry="100"
+         fill="url(#fur)"
+         transform="rotate(25 744 760)"/>
+
+  <!-- Glowing Finger -->
+  <circle cx="200" cy="690"
+          r="18"
+          fill="#00d9ff"
+          filter="url(#glow)"/>
+
+</svg>

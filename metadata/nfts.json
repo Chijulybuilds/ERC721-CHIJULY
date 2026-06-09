@@ -1,0 +1,17 @@
+[
+  {
+    "imagePath": "images/dullMonk.png",
+    "name": "CoolMonkey #0",
+    "description": "A CoolMonkey NFT."
+  },
+  {
+    "imagePath": "images/lookMonk.png",
+    "name": "LookMonkey #1",
+    "description": "A LookMonkey NFT."
+  },
+  {
+    "imagePath": "images/WeirdMonk.png",
+    "name": "WeirdMonkey #2",
+    "description": "A WeirdMonkey NFT."
+  }
+]

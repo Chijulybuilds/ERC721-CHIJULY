@@ -1,0 +1,19 @@
+{
+  "name": "advanced-foundry-nft",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:scripts": "tsc",
+    "upload:nft": "tsc && node dist/scripts/upload-pinata.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "pinata": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2"
+  }
+}

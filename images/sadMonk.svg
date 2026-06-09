@@ -1,0 +1,224 @@
+<svg width="1024"
+     height="1024"
+     viewBox="0 0 1024 1024"
+     xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+
+    <!-- Space Background -->
+    <radialGradient id="spaceBg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#142b6f"/>
+      <stop offset="100%" stop-color="#02030d"/>
+    </radialGradient>
+
+    <!-- Planet -->
+    <radialGradient id="planetGrad" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#38d6ff"/>
+      <stop offset="100%" stop-color="#0077ff"/>
+    </radialGradient>
+
+    <!-- Helmet -->
+    <linearGradient id="helmetGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#ff5b5b"/>
+    </linearGradient>
+
+    <!-- Red Lens -->
+    <radialGradient id="redLens" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#ff5555"/>
+      <stop offset="100%" stop-color="#6b0000"/>
+    </radialGradient>
+
+    <!-- Fur -->
+    <linearGradient id="furGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#d0d0d0"/>
+    </linearGradient>
+
+    <!-- Metallic -->
+    <linearGradient id="metalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0f0f0"/>
+      <stop offset="100%" stop-color="#555"/>
+    </linearGradient>
+
+    <!-- Glow -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+  </defs>
+
+  <!-- Background -->
+  <rect width="1024"
+        height="1024"
+        fill="url(#spaceBg)"/>
+
+  <!-- Stars -->
+  <circle cx="80" cy="120" r="4" fill="white"/>
+  <circle cx="900" cy="160" r="5" fill="white"/>
+  <circle cx="220" cy="80" r="3" fill="white"/>
+  <circle cx="760" cy="100" r="4" fill="white"/>
+  <circle cx="940" cy="300" r="3" fill="white"/>
+
+  <!-- Planet -->
+  <circle cx="512"
+          cy="430"
+          r="390"
+          fill="url(#planetGrad)"
+          opacity="0.95"/>
+
+  <!-- Floating Planets -->
+  <circle cx="120" cy="280"
+          r="70"
+          fill="#8f5bff"
+          opacity="0.5"/>
+
+  <circle cx="180" cy="120"
+          r="25"
+          fill="#ff7744"
+          opacity="0.8"/>
+
+  <circle cx="860" cy="200"
+          r="40"
+          fill="#9999ff"
+          opacity="0.6"/>
+
+  <!-- Helmet -->
+  <path d="
+      M300 300
+      Q512 120 724 300
+      L760 500
+      Q512 620 264 500
+      Z"
+      fill="url(#helmetGrad)"
+      stroke="#ffffff"
+      stroke-width="8"/>
+
+  <!-- Headphones Left -->
+  <rect x="180"
+        y="420"
+        width="120"
+        height="280"
+        rx="50"
+        fill="url(#metalGrad)"
+        stroke="#ff3333"
+        stroke-width="6"/>
+
+  <!-- Headphones Right -->
+  <rect x="724"
+        y="420"
+        width="120"
+        height="280"
+        rx="50"
+        fill="url(#metalGrad)"
+        stroke="#ff3333"
+        stroke-width="6"/>
+
+  <!-- Monkey Face -->
+  <ellipse cx="512"
+           cy="620"
+           rx="190"
+           ry="240"
+           fill="#111"/>
+
+  <!-- Eyes Left -->
+  <circle cx="420"
+          cy="520"
+          r="95"
+          fill="url(#redLens)"
+          filter="url(#glow)"/>
+
+  <!-- Eyes Right -->
+  <circle cx="604"
+          cy="520"
+          r="95"
+          fill="url(#redLens)"
+          filter="url(#glow)"/>
+
+  <!-- Eye Frames -->
+  <circle cx="420"
+          cy="520"
+          r="105"
+          fill="none"
+          stroke="#cccccc"
+          stroke-width="16"/>
+
+  <circle cx="604"
+          cy="520"
+          r="105"
+          fill="none"
+          stroke="#cccccc"
+          stroke-width="16"/>
+
+  <!-- Pupils -->
+  <circle cx="420"
+          cy="540"
+          r="22"
+          fill="#220000"/>
+
+  <circle cx="604"
+          cy="540"
+          r="22"
+          fill="#220000"/>
+
+  <!-- Nose -->
+  <path d="
+      M480 660
+      Q512 620 544 660
+      Q530 710 512 720
+      Q494 710 480 660
+      Z"
+      fill="#ffd8c0"/>
+
+  <!-- Mouth -->
+  <path d="
+      M430 790
+      Q512 820 594 790"
+      stroke="#ffbbbb"
+      stroke-width="10"
+      fill="none"
+      stroke-linecap="round"/>
+
+
+  <!-- Neck Gear -->
+  <circle cx="350"
+          cy="900"
+          r="55"
+          fill="url(#metalGrad)"/>
+
+  <circle cx="680"
+          cy="860"
+          r="50"
+          fill="url(#metalGrad)"/>
+
+  <!-- Suit -->
+  <path d="
+      M250 1024
+      L350 820
+      Q512 900 674 820
+      L774 1024
+      Z"
+      fill="#2c1f4f"/>
+
+  <!-- Neon Tubes -->
+  <path d="
+      M180 760
+      Q280 700 350 780"
+      stroke="#ff3333"
+      stroke-width="8"
+      fill="none"
+      filter="url(#glow)"/>
+
+  <path d="
+      M700 780
+      Q820 720 900 820"
+      stroke="#00d9ff"
+      stroke-width="8"
+      fill="none"
+      filter="url(#glow)"/>
+
+</svg>

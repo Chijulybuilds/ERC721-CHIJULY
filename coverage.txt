@@ -1,0 +1,84 @@
+Compiling 38 files with Solc 0.8.34
+Solc 0.8.34 finished in 1.85s
+Compiler run successful!
+Analysing contracts...
+Running tests...
+No tests found in project! Forge looks for functions that start with `test`
+script/DeployMyNFT.s.sol:
+- Line (location: (source ID: 35, lines: 10..16, bytes: 180..337), hits: 0) -> "function run() external returns ...ast();\n        return nft;\n    }"
+- Function "run" (location: (source ID: 35, lines: 10..16, bytes: 180..337), hits: 0) -> "function run() external returns ...ast();\n        return nft;\n    }"
+- Line (location: (source ID: 35, lines: 11..12, bytes: 230..249), hits: 0) -> "vm.startBroadcast()"
+- Statement (location: (source ID: 35, lines: 11..12, bytes: 230..249), hits: 0) -> "vm.startBroadcast()"
+- Line (location: (source ID: 35, lines: 12..13, bytes: 259..282), hits: 0) -> "MyNFT nft = new MyNFT()"
+- Statement (location: (source ID: 35, lines: 12..13, bytes: 259..282), hits: 0) -> "MyNFT nft = new MyNFT()"
+- Statement (location: (source ID: 35, lines: 12..13, bytes: 271..282), hits: 0) -> "new MyNFT()"
+- Line (location: (source ID: 35, lines: 13..14, bytes: 292..310), hits: 0) -> "vm.stopBroadcast()"
+- Statement (location: (source ID: 35, lines: 13..14, bytes: 292..310), hits: 0) -> "vm.stopBroadcast()"
+- Line (location: (source ID: 35, lines: 14..15, bytes: 320..330), hits: 0) -> "return nft"
+- Statement (location: (source ID: 35, lines: 14..15, bytes: 320..330), hits: 0) -> "return nft"
+
+src/MyNFT.sol:
+- Line (location: (source ID: 36, lines: 17..20, bytes: 345..425), hits: 0) -> "constructor() ERC721(\"CoolMonkey...    s_nftTokenCounter = 0;\n    }"
+- Function "constructor" (location: (source ID: 36, lines: 17..20, bytes: 345..425), hits: 0) -> "constructor() ERC721(\"CoolMonkey...    s_nftTokenCounter = 0;\n    }"
+- Line (location: (source ID: 36, lines: 18..19, bytes: 397..418), hits: 0) -> "s_nftTokenCounter = 0"
+- Statement (location: (source ID: 36, lines: 18..19, bytes: 397..418), hits: 0) -> "s_nftTokenCounter = 0"
+- Line (location: (source ID: 36, lines: 21..26, bytes: 431..619), hits: 0) -> "function mintNft(string memory t...      s_nftTokenCounter++;\n    }"
+- Function "mintNft" (location: (source ID: 36, lines: 21..26, bytes: 431..619), hits: 0) -> "function mintNft(string memory t...      s_nftTokenCounter++;\n    }"
+- Line (location: (source ID: 36, lines: 22..23, bytes: 489..533), hits: 0) -> "s_tokenIdToUri[s_nftTokenCounter] = tokenUri"
+- Statement (location: (source ID: 36, lines: 22..23, bytes: 489..533), hits: 0) -> "s_tokenIdToUri[s_nftTokenCounter] = tokenUri"
+- Line (location: (source ID: 36, lines: 23..24, bytes: 543..583), hits: 0) -> "_safeMint(msg.sender, s_nftTokenCounter)"
+- Statement (location: (source ID: 36, lines: 23..24, bytes: 543..583), hits: 0) -> "_safeMint(msg.sender, s_nftTokenCounter)"
+- Line (location: (source ID: 36, lines: 24..25, bytes: 593..612), hits: 0) -> "s_nftTokenCounter++"
+- Statement (location: (source ID: 36, lines: 24..25, bytes: 593..612), hits: 0) -> "s_nftTokenCounter++"
+- Line (location: (source ID: 36, lines: 27..30, bytes: 625..752), hits: 0) -> "function tokenURI(uint256 tokenI...n s_tokenIdToUri[tokenId];\n    }"
+- Function "tokenURI" (location: (source ID: 36, lines: 27..30, bytes: 625..752), hits: 0) -> "function tokenURI(uint256 tokenI...n s_tokenIdToUri[tokenId];\n    }"
+- Line (location: (source ID: 36, lines: 28..29, bytes: 715..745), hits: 0) -> "return s_tokenIdToUri[tokenId]"
+- Statement (location: (source ID: 36, lines: 28..29, bytes: 715..745), hits: 0) -> "return s_tokenIdToUri[tokenId]"
+
+test/MyNFTtest.t.sol:
+- Line (location: (source ID: 37, lines: 15..19, bytes: 330..429), hits: 0) -> "function setUp() public {\n      ...     nft = deployer.run();\n    }"
+- Function "setUp" (location: (source ID: 37, lines: 15..19, bytes: 330..429), hits: 0) -> "function setUp() public {\n      ...     nft = deployer.run();\n    }"
+- Line (location: (source ID: 37, lines: 16..17, bytes: 364..392), hits: 0) -> "deployer = new DeployMyNFT()"
+- Statement (location: (source ID: 37, lines: 16..17, bytes: 364..392), hits: 0) -> "deployer = new DeployMyNFT()"
+- Line (location: (source ID: 37, lines: 17..18, bytes: 402..422), hits: 0) -> "nft = deployer.run()"
+- Statement (location: (source ID: 37, lines: 17..18, bytes: 402..422), hits: 0) -> "nft = deployer.run()"
+
+Anchors for Contract "DeployMyNFT" (solc 0.8.34, source ID 35):
+-  runtime IC 56 -> Item 0: Line (location: (source ID: 35, lines: 10..16, bytes: 180..337), hits: 0)
+-  runtime IC 56 -> Item 1: Function "run" (location: (source ID: 35, lines: 10..16, bytes: 180..337), hits: 0)
+-  runtime IC 139 -> Item 2: Line (location: (source ID: 35, lines: 11..12, bytes: 230..249), hits: 0)
+-  runtime IC 139 -> Item 3: Statement (location: (source ID: 35, lines: 11..12, bytes: 230..249), hits: 0)
+-  runtime IC 229 -> Item 4: Line (location: (source ID: 35, lines: 12..13, bytes: 259..282), hits: 0)
+-  runtime IC 229 -> Item 5: Statement (location: (source ID: 35, lines: 12..13, bytes: 259..282), hits: 0)
+-  runtime IC 230 -> Item 6: Statement (location: (source ID: 35, lines: 12..13, bytes: 271..282), hits: 0)
+-  runtime IC 291 -> Item 7: Line (location: (source ID: 35, lines: 13..14, bytes: 292..310), hits: 0)
+-  runtime IC 291 -> Item 8: Statement (location: (source ID: 35, lines: 13..14, bytes: 292..310), hits: 0)
+-  runtime IC 381 -> Item 9: Line (location: (source ID: 35, lines: 14..15, bytes: 320..330), hits: 0)
+-  runtime IC 381 -> Item 10: Statement (location: (source ID: 35, lines: 14..15, bytes: 320..330), hits: 0)
+
+Anchors for Contract "MyNFTTest" (solc 0.8.34, source ID 37):
+-  runtime IC 247 -> Item 27: Line (location: (source ID: 37, lines: 15..19, bytes: 330..429), hits: 0)
+-  runtime IC 247 -> Item 28: Function "setUp" (location: (source ID: 37, lines: 15..19, bytes: 330..429), hits: 0)
+-  runtime IC 678 -> Item 29: Line (location: (source ID: 37, lines: 16..17, bytes: 364..392), hits: 0)
+-  runtime IC 678 -> Item 30: Statement (location: (source ID: 37, lines: 16..17, bytes: 364..392), hits: 0)
+-  runtime IC 780 -> Item 31: Line (location: (source ID: 37, lines: 17..18, bytes: 402..422), hits: 0)
+-  runtime IC 780 -> Item 32: Statement (location: (source ID: 37, lines: 17..18, bytes: 402..422), hits: 0)
+
+Anchors for Contract "MyNFT" (solc 0.8.34, source ID 36):
+- creation IC 5 -> Item 11: Line (location: (source ID: 36, lines: 17..20, bytes: 345..425), hits: 0)
+- creation IC 5 -> Item 12: Function "constructor" (location: (source ID: 36, lines: 17..20, bytes: 345..425), hits: 0)
+- creation IC 158 -> Item 13: Line (location: (source ID: 36, lines: 18..19, bytes: 397..418), hits: 0)
+- creation IC 158 -> Item 14: Statement (location: (source ID: 36, lines: 18..19, bytes: 397..418), hits: 0)
+-  runtime IC 676 -> Item 15: Line (location: (source ID: 36, lines: 21..26, bytes: 431..619), hits: 0)
+-  runtime IC 676 -> Item 16: Function "mintNft" (location: (source ID: 36, lines: 21..26, bytes: 431..619), hits: 0)
+-  runtime IC 2019 -> Item 17: Line (location: (source ID: 36, lines: 22..23, bytes: 489..533), hits: 0)
+-  runtime IC 2019 -> Item 18: Statement (location: (source ID: 36, lines: 22..23, bytes: 489..533), hits: 0)
+-  runtime IC 2052 -> Item 19: Line (location: (source ID: 36, lines: 23..24, bytes: 543..583), hits: 0)
+-  runtime IC 2052 -> Item 20: Statement (location: (source ID: 36, lines: 23..24, bytes: 543..583), hits: 0)
+-  runtime IC 2064 -> Item 21: Line (location: (source ID: 36, lines: 24..25, bytes: 593..612), hits: 0)
+-  runtime IC 2064 -> Item 22: Statement (location: (source ID: 36, lines: 24..25, bytes: 593..612), hits: 0)
+-  runtime IC 628 -> Item 23: Line (location: (source ID: 36, lines: 27..30, bytes: 625..752), hits: 0)
+-  runtime IC 628 -> Item 24: Function "tokenURI" (location: (source ID: 36, lines: 27..30, bytes: 625..752), hits: 0)
+-  runtime IC 1860 -> Item 25: Line (location: (source ID: 36, lines: 28..29, bytes: 715..745), hits: 0)
+-  runtime IC 1860 -> Item 26: Statement (location: (source ID: 36, lines: 28..29, bytes: 715..745), hits: 0)
+

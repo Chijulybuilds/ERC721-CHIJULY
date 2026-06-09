@@ -1,0 +1,9 @@
+{
+    "name": "MyDynamicNFT",
+    "description": "A dynamic NFT that changes based on its state",
+    "imageURI": "",
+    "attributes": {
+        "trait-type": "Moodiness",
+        "value": "200"
+    }
+}
