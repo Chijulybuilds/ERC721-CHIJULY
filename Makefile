@@ -1,6 +1,6 @@
 -include .env
 
-.PHONY: dependency node_dependency uploadnft test coverage gas deploy verify_contract mintnft
+.PHONY: dependency node_dependency uploadnft test coverage gas deploy deploy-dynamic verify_contract mintnft
 
 dependency:
 	forge install smartcontractkit/chainlink-brownie-contracts && forge install Cyfrin/foundry-devops@0.4.0 && forge install openzeppelin/openzeppelin-contracts@v5.6.1
@@ -23,8 +23,12 @@ gas:
 deploy:
 	forge script script/DeployMyNFT.s.sol --fork-url ${SEPOLIA_URL} --private-key ${PRIVATE_KEY} --broadcast
 
+deploy-dynamic:
+	forge script script/DeployDynamicNFT.s.sol --fork-url ${SEPOLIA_URL} --private-key ${PRIVATE_KEY} --broadcast
+
+
 verify_contract:
-	forge verify-contract 0x88dbaf6208877f994be09d038f90a3bcb4c9b2fe src/MyNFT.sol:MyNFT \
+	forge verify-contract 0x8581831eb74d5ee047f544ba297ee4f7e52d3908 src/MyDynamicNFT.sol:MyDynamicNFT \
   --chain-id 11155111 \
   --etherscan-api-key ${ETHERSCAN_API_KEY} \
   --watch \

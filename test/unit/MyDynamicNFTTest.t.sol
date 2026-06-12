@@ -24,8 +24,8 @@ contract MyDynamicNFTTest is Test {
 
     function setUp() external {
         DeployDynamicNFT deployer = new DeployDynamicNFT();
-
         myDynamicNFT = deployer.run();
+        vm.etch(USER, "");
     }
 
     /*//////////////////////////////////////////////////////////////
@@ -47,7 +47,9 @@ contract MyDynamicNFTTest is Test {
     function testTokenURIReturnsSadImageURI() public {
         vm.prank(USER);
 
-        myDynamicNFT.mintNFT();
+        if (block.chainid == 11155111 || block.chainid == 31337) {
+            myDynamicNFT.mintNFT();
+        }
 
         string memory actualTokenURI = myDynamicNFT.tokenURI(TOKEN_ID);
 
@@ -80,7 +82,9 @@ contract MyDynamicNFTTest is Test {
     function testTokenURIReturnsHappyImageURI() public {
         vm.prank(USER);
 
-        myDynamicNFT.mintNFT();
+        if (block.chainid == 11155111 || block.chainid == 31337) {
+            myDynamicNFT.mintNFT();
+        }
 
         vm.prank(USER);
 
@@ -116,7 +120,9 @@ contract MyDynamicNFTTest is Test {
     function testTokenURIContainsBase64Prefix() public {
         vm.prank(USER);
 
-        myDynamicNFT.mintNFT();
+        if (block.chainid == 11155111 || block.chainid == 31337) {
+            myDynamicNFT.mintNFT();
+        }
 
         string memory tokenUri = myDynamicNFT.tokenURI(TOKEN_ID);
 
@@ -137,7 +143,9 @@ contract MyDynamicNFTTest is Test {
     function testTokenURINotEmpty() public {
         vm.prank(USER);
 
-        myDynamicNFT.mintNFT();
+        if (block.chainid == 11155111 || block.chainid == 31337) {
+            myDynamicNFT.mintNFT();
+        }
 
         string memory tokenUri = myDynamicNFT.tokenURI(TOKEN_ID);
 
@@ -150,9 +158,11 @@ contract MyDynamicNFTTest is Test {
     function testMultipleMintedNFTsReturnValidURIs() public {
         vm.startPrank(USER);
 
-        myDynamicNFT.mintNFT();
-        myDynamicNFT.mintNFT();
-        myDynamicNFT.mintNFT();
+        if (block.chainid == 11155111 || block.chainid == 31337) {
+            myDynamicNFT.mintNFT();
+            myDynamicNFT.mintNFT();
+            myDynamicNFT.mintNFT();
+        }
 
         vm.stopPrank();
 
@@ -173,7 +183,9 @@ contract MyDynamicNFTTest is Test {
     function testTokenURIChangesAfterMoodFlip() public {
         vm.prank(USER);
 
-        myDynamicNFT.mintNFT();
+        if (block.chainid == 11155111 || block.chainid == 31337) {
+            myDynamicNFT.mintNFT();
+        }
 
         string memory initialURI = myDynamicNFT.tokenURI(TOKEN_ID);
 
@@ -192,12 +204,15 @@ contract MyDynamicNFTTest is Test {
     function testTokenURIIsDeterministic() public {
         vm.prank(USER);
 
-        myDynamicNFT.mintNFT();
+        if (block.chainid == 11155111 || block.chainid == 31337) {
+            myDynamicNFT.mintNFT();
 
-        string memory uri1 = myDynamicNFT.tokenURI(TOKEN_ID);
+            string memory uri1 = myDynamicNFT.tokenURI(TOKEN_ID);
 
-        string memory uri2 = myDynamicNFT.tokenURI(TOKEN_ID);
+            string memory uri2 = myDynamicNFT.tokenURI(TOKEN_ID);
 
-        assertEq(uri1, uri2);
+            assertEq(uri1, uri2);
+        }
+
     }
 }

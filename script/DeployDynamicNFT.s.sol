@@ -11,9 +11,7 @@ contract DeployDynamicNFT is Script {
 
         string memory happySVG = vm.readFile("./images/happyMonk.svg");
         string memory sadSVG = vm.readFile("./images/sadMonk.svg");
-        console.log(happySVG);
         string memory HAPPY_IMAGE_URI = svgToImageURI(happySVG);
-        console.log(HAPPY_IMAGE_URI);
         string memory SAD_IMAGE_URI = svgToImageURI(sadSVG);
 
         vm.startBroadcast();
