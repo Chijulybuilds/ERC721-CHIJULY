@@ -17,8 +17,10 @@ dist/
 # Docs
 docs/
 
+
 # Generated upload output
 metadata/*.upload.json
+
 
 # Dotenv file
 .env

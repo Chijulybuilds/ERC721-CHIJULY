@@ -2,6 +2,7 @@
 
 .PHONY: dependency node_dependency uploadnft test coverage gas deploy deploy-dynamic verify_contract mintnft
 
+
 dependency:
 	forge install smartcontractkit/chainlink-brownie-contracts && forge install Cyfrin/foundry-devops@0.4.0 && forge install openzeppelin/openzeppelin-contracts@v5.6.1
 

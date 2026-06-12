@@ -72,7 +72,6 @@ contract MyDynamicNFTTest is Test {
         string memory expectedTokenURI =
             string(abi.encodePacked("data:application/json;base64,", Base64.encode(expectedMetadata)));
 
-        console.log(expectedTokenURI);
         assertEq(actualTokenURI, expectedTokenURI);
     }
 
@@ -110,7 +109,7 @@ contract MyDynamicNFTTest is Test {
 
         string memory expectedTokenURI =
             string(abi.encodePacked("data:application/json;base64,", Base64.encode(expectedMetadata)));
-        console.log(expectedTokenURI);
+    
         assertEq(actualTokenURI, expectedTokenURI);
     }
 

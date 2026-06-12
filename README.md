@@ -1,66 +1,150 @@
-## Foundry
+# NFT Foundry
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+A Foundry-based ERC-721 Collection that demonstrates how to build, test, and deploy a NFT smart contract using `forge`, using the anvil, sepolia and mainnet configurations.
 
-Foundry consists of:
+Repo: https://github.com/Chijulybuilds/ERC721-CHIJULY.git
 
-- **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
-- **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
-- **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
-- **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+## Quick Start
 
-## Documentation
+### Fork and clone
 
-https://book.getfoundry.sh/
+1. Fork the repository on GitHub from:
+   - `https://github.com/Chijulybuilds/ERC721-CHIJULY.git`
+2. Clone your fork locally:
+   ```bash
+   git clone https://github.com/<your-username>/ERC721-CHIJULY.git
+   cd ERC721-CHIJULY
+   ```
+3. Create a new branch for your changes:
+   ```bash
+   git checkout -b feature/my-update
+   ```
 
-## Usage
+### Contribute
+
+1. Make changes in your branch.
+2. Run tests locally:
+   ```bash
+   make test
+   ```
+3. Add and commit your work:
+   ```bash
+   git add .
+   git commit -m "Describe your change"
+   ```
+4. Push your branch:
+   ```bash
+   git push origin feature/my-update
+   ```
+5. Open a pull request on GitHub.
+
+## Project Overview
+
+This repository contains:
+
+- `src/MyNFT.sol` — builds an nft collection of static ERC-721 Tokens.
+- `src/MyDynamicNFT.sol` — builds an nft collection of dynamic ERC-721 Tokens using flipMood.
+- `test/unit/MyNFTtest.t.sol` — unit tests for static NFTs
+- `test/unit/MyDynamicNFTtest.t.sol` — unit tests for dynamic NFTs
+- `test/fuzz/MyNFTfuzztest.t.sol` — fuzz tests for static  NFTs that runs on 100.
+- `script/DeployMyNFT.s.sol` — deployment script for static NFT collection.
+- `script/DeployDynamicNFT.s.sol` — deployment script for dynaic NFT collection
+- `Makefile` — common commands for test, gas report, and deploy.
+
+## Requirements
+
+- Foundry installed (`forge`, `cast`, `anvil`)
+- Node/npm is not required unless you use extra tools, but Foundry is the main toolchain.
+- `.env` file with network variables when running remote tests or deploys.
+
+## Setup
+
+Install dependencies:
+
+```bash
+forge install
+```
+
+## Common Commands
 
 ### Build
 
-```shell
-$ forge build
+```bash
+forge build
 ```
 
 ### Test
 
-```shell
-$ forge test
+Run all tests locally and on configured forks:
+
+```bash
+make test
 ```
 
-### Format
+If you want only the local tests:
 
-```shell
-$ forge fmt
+```bash
+forge test -vvv
 ```
 
-### Gas Snapshots
+### Gas report
 
-```shell
-$ forge snapshot
+```bash
+make gas
 ```
 
-### Anvil
+Or directly:
 
-```shell
-$ anvil
+```bash
+forge test -vvv --gas-report
 ```
 
-### Deploy
+### Deploy to Sepolia
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+```bash
+make deploy
 ```
 
-### Cast
 
-```shell
-$ cast <subcommand>
+## How to Use This Project
+
+- `src/MyNFT.sol` is the NFT collection that creates room for nft IPFS NFT minting.
+- `script/DeployMyNFT.s.sol` deploys the NFT collection contract that allows for Nft minting.
+- `src/MyDynamicyNFT.sol` is the NFT collection that creates room for nft IPFS Dynamic NFT minting using the flipMood function.
+- `script/DeployDynamicNFT.s.sol` deploys the NFT collection contract that allows for Nft minting by automaically reading the svg files using the vm.readfile() to generate the Nft_URI.
+
+
+
+## Project Structure
+
+```text
+foundry.toml
+Makefile
+README.md
+script/
+  DeployDynamicNFT.s.sol
+  DeployMyNFT.s.sol
+src/
+  MyNFT.sol
+  MyDynamicNFT.sol
+test/
+   unit/
+      MyNFTtest.t.sol
+      MyDynamicNFTtest.t.sol
+   fuzz/
+      MyNFTfuzztest.t.sol
+lib/
+   forge-std/
+   foundry-devops/
+   openzeppelin-contracts/
 ```
 
-### Help
+## Notes
 
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+- Use `forge fmt` to format Solidity files.
+- Use `forge coverage` for coverage reports.
+- Keep constructor parameters aligned with network-specific VRF settings for flexibility.
+
+## License
+
+This project is released under the MIT License.
